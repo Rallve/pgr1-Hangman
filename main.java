@@ -1,10 +1,10 @@
 import javax.swing.*;
 import java.util.*;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         List<String> asci = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"));
-        List<String> ord = new ArrayList<>(Arrays.asList("multidimensional", "declaration", "metric", "subtract", "assembly", "construction"));
+        List<String> ord = new ArrayList<>(Arrays.asList("multidimensional", "declaration", "metric", "subtract", "assembly", "construction", "array", "string", "variable"));
         List<String> boksGiss = new ArrayList<>(Arrays.asList(" "));
         char gissning = '\0';
         String längd = "";
@@ -20,8 +20,10 @@ public class main {
                     if (boksGiss.get(n).equals(String.valueOf(rättOrd.charAt(i)))) {
                         längd += rättOrd.charAt(i) + " ";
                         c = true;
-                        rätt = true;
                         }
+                    }
+                    if (String.valueOf(gissning).equals(String.valueOf(rättOrd.charAt(i)))) {
+                        rätt = true;
                     }
                 if (c == false) {
                     längd += "_ ";
