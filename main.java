@@ -14,6 +14,7 @@ public class Main {
         int fel = -1;
         boolean c = false;
         boolean rätt = false;
+        boolean ogiltig = false;
         while (true) {
             for (int i = 0; i < rättOrd.length(); i++) {
                 for (int n = 0; n < boksGiss.size(); n++) {
@@ -35,7 +36,21 @@ public class Main {
             }
             rätt = false;
             image = ((double) fel / felAnt) * 10;
-            gissning = JOptionPane.showInputDialog(asci.get((int) image) + "\n" + längd + "\n" + boksGiss + "\nGissa på en bokstav.").charAt(0);
+            while (true) {
+                gissning = JOptionPane.showInputDialog(asci.get((int) image) + "\n" + längd + "\n" + boksGiss + "\nGissa på en bokstav.").charAt(0);
+                for (int i = 0; i < boksGiss.size(); i++) {
+                    if (boksGiss.get(i).equals(String.valueOf(gissning))) {
+                        ogiltig = true;
+                    }
+                }
+                if (ogiltig == true) {
+                    JOptionPane.showMessageDialog(null, "Du har redan gissat på den bokstaven förut.");
+                    ogiltig = false;
+                }
+                else {
+                    break;
+                }
+            }
             längd = "";
             boksGiss.add(String.valueOf(gissning));
         }
