@@ -56,3 +56,6 @@ public class Main {
         }
     }
 }
+/* Kvar att göra:
+Funktionalitet för att gissa på hela ordet.
+ASCII bilder. */
